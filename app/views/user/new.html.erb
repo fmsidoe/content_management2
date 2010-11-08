@@ -1,0 +1,6 @@
+<%= form_for @user, :url => {:controller => "user", :action => "create"} do |f|%>
+
+<%= render :partial => "form", :locals => {:f => f}%>
+
+<%= f.submit "register"%>
+<%end%>

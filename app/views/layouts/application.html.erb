@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ContentManagement2</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+  <% if current_user %>
+ <%= link_to "uitloggen", destroy_user_session_path%>
+ 
+ <% if current_user.roles == "admin"%>
+  je bent admin
+ <%else%>
+ je bent een user
+ <%end%>
+ <%else%>
+<%= link_to "inloggen",  new_user_session_path%>
+<%end%>
+<%= yield %>
+
+</body>
+</html>
